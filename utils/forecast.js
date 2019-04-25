@@ -11,14 +11,14 @@ const forecast = (lat, long, callback) => {
 			callback('User level error.', undefined);
 		} else {
 			callback(undefined, {
-				temperature       : body.currently.temperature,
-				precipProbability : body.currently.precipProbability,
-				forecast          :
+				forecast :
 					'A temperatura atual é de ' +
 					body.currently.temperature +
+					' com sensação térmica de ' +
+					body.currently.apparentTemperature +
 					' e a chance de chuva é de ' +
 					body.currently.precipProbability +
-					'%.'
+					'%. '
 			});
 		}
 	});
